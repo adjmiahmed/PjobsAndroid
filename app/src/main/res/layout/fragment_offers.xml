@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
 
     android:background="@android:color/holo_purple"
-    tools:context="com.internship.ahmedaj.tinderstage.OffersFrag">
+    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.OffersFrag">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

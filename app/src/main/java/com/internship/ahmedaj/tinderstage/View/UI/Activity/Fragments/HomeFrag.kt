@@ -1,4 +1,4 @@
-package com.internship.ahmedaj.tinderstage
+package com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments
 
 
 import android.content.Context
@@ -7,10 +7,12 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.internship.ahmedaj.tinderstage.R
+import com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys.TinderCard
+import com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys.Utils
 import com.mindorks.placeholderview.SwipeDecor
 import com.mindorks.placeholderview.SwipePlaceHolderView
 import com.mindorks.placeholderview.SwipeViewBuilder
-import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
  * A simple [Fragment] subclass.

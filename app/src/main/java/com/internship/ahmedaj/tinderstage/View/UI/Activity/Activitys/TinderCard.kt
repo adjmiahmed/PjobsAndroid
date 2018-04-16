@@ -1,4 +1,4 @@
-package com.internship.ahmedaj.tinderstage
+package com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys
 
 import android.content.Context
 import android.util.Log
@@ -6,6 +6,8 @@ import android.widget.ImageView
 import android.widget.TextView
 
 import com.bumptech.glide.Glide
+import com.internship.ahmedaj.tinderstage.Service.Model.Profile
+import com.internship.ahmedaj.tinderstage.R
 import com.mindorks.placeholderview.SwipePlaceHolderView
 import com.mindorks.placeholderview.annotations.Layout
 import com.mindorks.placeholderview.annotations.Resolve

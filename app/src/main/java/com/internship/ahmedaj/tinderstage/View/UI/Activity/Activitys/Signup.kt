@@ -1,4 +1,4 @@
-package com.internship.ahmedaj.tinderstage
+package com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -8,13 +8,12 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v4.content.ContextCompat
 import android.util.Log
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.internship.ahmedaj.tinderstage.R.id.progressFix
+import com.internship.ahmedaj.tinderstage.R
 import kotlinx.android.synthetic.main.activity_signup.*
 
 class Signup : AppCompatActivity() {

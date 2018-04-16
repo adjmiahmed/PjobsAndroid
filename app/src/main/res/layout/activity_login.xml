@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardview_light_background"
-    tools:context="com.internship.ahmedaj.tinderstage.Login">
+    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys.Login">
 
     <ImageView
         android:id="@+id/imageView2"

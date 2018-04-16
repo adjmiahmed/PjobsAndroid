@@ -1,4 +1,4 @@
-package com.internship.ahmedaj.tinderstage.InterfaceRetrofit
+package com.internship.ahmedaj.tinderstage.Service.Repository
 
 /**
  * Created by ahmed aj on 30/03/2018.
@@ -10,8 +10,8 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import com.facebook.stetho.okhttp3.StethoInterceptor
-import com.internship.ahmedaj.tinderstage.Model.User
-import com.internship.ahmedaj.tinderstage.Model.UserNoId
+import com.internship.ahmedaj.tinderstage.Service.Model.User
+import com.internship.ahmedaj.tinderstage.Service.Model.UserNoId
 
 import okhttp3.OkHttpClient
 import retrofit2.http.*
@@ -36,7 +36,7 @@ interface UserApiService {
     fun AddUser(@Body user: UserNoId): Call<User>
 
     @PUT("Update/USER/{id}")
-    fun updateUser(@Path("id") id:String,@Body user:UserNoId ): Call<User>
+    fun updateUser(@Path("id") id:String,@Body user: UserNoId): Call<User>
     @DELETE("Delete/USER/{id}")
     fun deleteUser(@Path("id") id:String ): Call<User>
 

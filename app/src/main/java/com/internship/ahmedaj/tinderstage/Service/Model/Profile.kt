@@ -1,4 +1,4 @@
-package com.internship.ahmedaj.tinderstage
+package com.internship.ahmedaj.tinderstage.Service.Model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_green_light"
-    tools:context="com.internship.ahmedaj.tinderstage.ChatFrag">
+    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.ChatFrag">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

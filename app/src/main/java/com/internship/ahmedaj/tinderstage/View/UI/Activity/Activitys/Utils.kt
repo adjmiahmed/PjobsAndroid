@@ -1,11 +1,10 @@
-package com.internship.ahmedaj.tinderstage
+package com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys
 
 import android.content.Context
-import android.content.res.AssetManager
 import android.util.Log
 
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.internship.ahmedaj.tinderstage.Service.Model.Profile
 
 import org.json.JSONArray
 

@@ -1,29 +1,26 @@
-package com.internship.ahmedaj.tinderstage
+package com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys
 
-import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.FragmentManager
 import android.support.v7.widget.Toolbar
 import android.util.Log
-import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
-import android.widget.Switch
 import com.facebook.login.LoginManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.internship.ahmedaj.tinderstage.*
+import com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.ChatFrag
+import com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.HomeFrag
+import com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.OffersFrag
+import com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.ProfileFrag
 
 
-import com.mindorks.placeholderview.SwipeDecor
-import com.mindorks.placeholderview.SwipePlaceHolderView
-import com.mindorks.placeholderview.SwipeViewBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottombar.*
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : AppCompatActivity() {

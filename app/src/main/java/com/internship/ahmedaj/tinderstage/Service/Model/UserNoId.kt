@@ -1,4 +1,4 @@
-package com.internship.ahmedaj.tinderstage.Model
+package com.internship.ahmedaj.tinderstage.Service.Model
 
 /**
  * Created by ahmed aj on 30/03/2018.

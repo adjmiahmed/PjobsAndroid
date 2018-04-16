@@ -1,4 +1,4 @@
-package com.internship.ahmedaj.tinderstage
+package com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -12,8 +12,8 @@ import android.widget.EditText
 import android.widget.Toast
 import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
 import com.facebook.stetho.Stetho
-import com.internship.ahmedaj.tinderstage.InterfaceRetrofit.UserApiService
-import com.internship.ahmedaj.tinderstage.Model.User
+import com.internship.ahmedaj.tinderstage.Service.Repository.UserApiService
+import com.internship.ahmedaj.tinderstage.Service.Model.User
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,8 +21,6 @@ import retrofit2.Response
 import com.google.android.gms.tasks.Task
 import android.support.annotation.NonNull
 import com.google.android.gms.tasks.OnCompleteListener
-import android.R.attr.password
-import android.R.attr.password
 import android.widget.Button
 import android.widget.ImageButton
 import com.facebook.*
@@ -34,6 +32,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.*
+import com.internship.ahmedaj.tinderstage.R
 
 class Login : AppCompatActivity() {
 //button et editText
@@ -45,7 +44,7 @@ private lateinit var bt:CircularProgressButton
     private lateinit var bt_facebooksignin:LoginButton
     private var conn=true
     //object retrofit
-    private  var respUser:User=User("","","","","")
+    private  var respUser: User = User("", "", "", "", "")
     private val UserApiServe by lazy {
         UserApiService.create()
     }

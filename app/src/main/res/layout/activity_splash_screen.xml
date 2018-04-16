@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="com.internship.ahmedaj.tinderstage.SplashScreen">
+    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys.SplashScreen">
 
 
     <ImageView
