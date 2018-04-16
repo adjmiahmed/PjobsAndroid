@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    tools:context="com.internship.ahmedaj.tinderstage.Login">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_above="@+id/ed_email"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:srcCompat="@mipmap/logo" />
+
+    <EditText  android:id="@+id/ed_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:layout_marginLeft="20dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:hint="Email"/>
+    />
+    <EditText  android:id="@+id/ed_passwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/ed_email"
+        android:textAlignment="center"
+        android:hint="Password"/>
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/progressFix"
+        android:layout_width="match_parent"
+        android:theme="@style/BluePrimaryButton"
+        android:background="@drawable/button"
+        android:layout_height="50dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        app:spinning_bar_color="#FFFFFFFF"
+        app:spinning_bar_padding="8dp"
+        app:spinning_bar_width="4dp"
+        app:initialCornerAngle="50dp"
+        app:finalCornerAngle="50dp"
+        android:text="Send"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/ed_passwd"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageButton
+        android:id="@+id/bt_googleSignIn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/progressFix"
+        android:layout_centerHorizontal="true"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/googleg_standard_color_18" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/bt_facebookSignIn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/progressFix"
+        android:layout_toEndOf="@+id/imageView2"
+
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/com_facebook_favicon_blue" />
+
+    <ImageButton
+        android:id="@+id/bt_LinkedinSignIn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/progressFix"
+        android:layout_toStartOf="@+id/imageView2"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/com_facebook_button_background"
+       />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/desplayText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/bt_signup"
+            android:layout_alignBottom="@+id/bt_signup"
+
+            android:layout_marginStart="67dp"
+            android:layout_weight="1"
+            android:text="Do i have an account ?"
+            android:textColor="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/bt_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/desplayText"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="Create Now"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

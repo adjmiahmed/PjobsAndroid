@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    >
+
+
+    <ImageButton
+        android:id="@+id/bt_accueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:background="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/acceuil" />
+
+    <ImageButton
+        android:id="@+id/bt_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_toEndOf="@+id/bt_accueil"
+        android:layout_toRightOf="@+id/bt_accueil"
+        android:background="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/usergrey" />
+
+    <ImageButton
+        android:id="@+id/bt_offers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_toLeftOf="@+id/bt_chat"
+        android:layout_toStartOf="@+id/bt_chat"
+        android:background="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/casegrey" />
+
+    <ImageButton
+        android:id="@+id/bt_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/ic_action_name" />
+</RelativeLayout>
+</android.support.v7.widget.Toolbar>

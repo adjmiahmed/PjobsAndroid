@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "390037231557",
+    "firebase_url": "https://pjobsdb.firebaseio.com",
+    "project_id": "pjobsdb",
+    "storage_bucket": "pjobsdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390037231557:android:4ac16fa8184cf7af",
+        "android_client_info": {
+          "package_name": "com.internship.ahmedaj.tinderstage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390037231557-q57rkb745ddmibade0fskbkkf2ujtjum.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.internship.ahmedaj.tinderstage",
+            "certificate_hash": "d3d41f7c61c8e96aab8508a9505d72c5cf02d865"
+          }
+        },
+        {
+          "client_id": "390037231557-0277p0rq1rt9c0h7lk05gf55uf8r613h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHhYkBEf6Gha9UHUBhT71sjA1o0DzHRKk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390037231557-0277p0rq1rt9c0h7lk05gf55uf8r613h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

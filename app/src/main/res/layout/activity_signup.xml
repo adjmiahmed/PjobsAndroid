@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.internship.ahmedaj.tinderstage.Login">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_above="@+id/ed_username"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        app:srcCompat="@mipmap/logo" />
+
+    <EditText
+        android:id="@+id/ed_username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:hint="Username"
+        android:textAlignment="center" />
+    />
+    <EditText  android:id="@+id/ed_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/ed_username"
+        android:textAlignment="center"
+        android:hint="Email"/>
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/bt_signup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/ed_passwd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button"
+        android:text="Send"
+        android:textColor="@android:color/white"
+        android:theme="@style/BluePrimaryButton"
+        app:finalCornerAngle="50dp"
+        app:initialCornerAngle="50dp"
+        app:spinning_bar_color="#FFFFFFFF"
+        app:spinning_bar_padding="8dp"
+        app:spinning_bar_width="4dp" />
+
+    <EditText
+        android:id="@+id/ed_passwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/ed_email"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:hint="password"
+        android:textAlignment="center" />
+
+</RelativeLayout>
