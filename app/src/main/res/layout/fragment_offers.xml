@@ -2,15 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:background="@android:color/holo_purple"
     tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.OffersFrag">
+<android.support.v7.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:text="offers" />
+</android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

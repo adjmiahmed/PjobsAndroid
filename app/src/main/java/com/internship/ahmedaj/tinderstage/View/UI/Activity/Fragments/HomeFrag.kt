@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.internship.ahmedaj.tinderstage.R
+import com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys.OfferCard
 import com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys.TinderCard
 import com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys.Utils
 import com.mindorks.placeholderview.SwipeDecor
@@ -30,19 +31,23 @@ class HomeFrag : Fragment() {
         // findViewById<View>(R.id.swipeView) as SwipePlaceHolderView
         mContext = view.context
         mSwipeView!!.getBuilder<SwipePlaceHolderView, SwipeViewBuilder<SwipePlaceHolderView>>()
-                .setDisplayViewCount(3)
+                .setDisplayViewCount(2)
                 .setSwipeDecor(SwipeDecor()
                         .setPaddingTop(20)
                         .setRelativeScale(0.01f)
                         .setSwipeInMsgLayoutId(R.layout.tinder_swipe_in_msg_view)
                         .setSwipeOutMsgLayoutId(R.layout.tinder_swipe_out_msg_view))
 
-
+/*
         for (profile in Utils.loadProfiles(view.context)!!) {
             mSwipeView!!.addView(TinderCard(mContext, profile, mSwipeView))
         }
+*/
+for(i in 1..5)
+{
+    mSwipeView!!.addView(OfferCard(mContext,mSwipeView))
 
-
+}
 
         return view
 

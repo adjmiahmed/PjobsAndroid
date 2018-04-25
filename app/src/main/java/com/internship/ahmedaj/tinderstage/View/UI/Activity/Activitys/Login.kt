@@ -123,35 +123,35 @@ private val TAGFacebook = "FacebookLogin"
         signup.setOnClickListener{
             startActivity(Intent(this, Signup::class.java))
         }
-        if((tx_username.text.toString()!="")&&(tx_passwd.text.toString()!=""))
+
         //button login action
         bt.setOnClickListener{
+            if((tx_username.text.toString()!="")&&(tx_passwd.text.toString()!="")) {
+                mAuth.signInWithEmailAndPassword(tx_username.text.toString(), tx_passwd.text.toString())
+                        .addOnCompleteListener(this) { task ->
+                            if (task.isSuccessful) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d("", "signInWithEmail:success")
+                                Toast.makeText(this, "Authentication sucess",
+                                        Toast.LENGTH_SHORT).show()
+                                val user = mAuth.currentUser
 
-            mAuth.signInWithEmailAndPassword(tx_username.text.toString(), tx_passwd.text.toString())
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("", "signInWithEmail:success")
-                            Toast.makeText(this, "Authentication sucess",
-                                    Toast.LENGTH_SHORT).show()
-                            val user = mAuth.currentUser
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w("", "signInWithEmail:failure", task.exception)
+                                Toast.makeText(this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show()
+                                //startActivity(Intent(this, Login::class.java))
+                                conn = false
+                                updateUI(null)
+                            }
 
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("", "signInWithEmail:failure", task.exception)
-                            Toast.makeText(this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show()
-                            //startActivity(Intent(this, Login::class.java))
-                         conn=false
-                            updateUI(null)
+                            // ...
                         }
+                animateButtonAndRevert(progressFix,
+                        ContextCompat.getColor(applicationContext, R.color.colorPrimaryDark), BitmapFactory.decodeResource(resources, R.drawable.checkmark))
 
-                        // ...
-                    }
-            animateButtonAndRevert(progressFix,
-                    ContextCompat.getColor(applicationContext, R.color.colorPrimaryDark),BitmapFactory.decodeResource(resources, R.drawable.checkmark) )
-
-        }
+            }}
         bt_googlesignin.setOnClickListener{
             googleSignIn()
         }

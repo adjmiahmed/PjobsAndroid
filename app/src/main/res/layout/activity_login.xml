@@ -14,31 +14,36 @@
         android:layout_above="@+id/ed_email"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        app:srcCompat="@mipmap/logo" />
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/pjobs" />
 
-    <EditText  android:id="@+id/ed_email"
+    <EditText
+        android:id="@+id/ed_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edittext_rounded_corners"
-        android:layout_marginLeft="20dp"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:hint="Email"/>
-    />
-    <EditText  android:id="@+id/ed_passwd"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/edittext_rounded_corners"
-        android:layout_marginLeft="20dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center" />
+    />
+
+    <EditText
+        android:id="@+id/ed_passwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_below="@id/ed_email"
-        android:textAlignment="center"
-        android:hint="Password"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textAlignment="center" />
 
     <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
         android:id="@+id/progressFix"
