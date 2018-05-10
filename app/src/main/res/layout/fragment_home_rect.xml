@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rel1"
+    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.ChatFrag">
+
+
+    <com.mindorks.placeholderview.SwipePlaceHolderView
+        android:id="@+id/swipeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imageWave"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/pjobs"
+        android:visibility="visible" />
+</RelativeLayout>

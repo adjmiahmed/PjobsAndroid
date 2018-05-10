@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.internship.ahmedaj.tinderstage.View.Adapters.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:layout_gravity="center_vertical"
+    app:dragFromEdge="right">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="137dp"
+
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingEnd="10dp"
+            android:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/info_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/greenaccept"
+                android:scaleType="fitCenter"
+                android:text="Info"
+                app:srcCompat="@drawable/eye1" />
+
+            <ImageButton
+                android:id="@+id/edit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/redreject"
+                android:scaleType="fitCenter"
+                android:text="Edit"
+                app:srcCompat="@drawable/ic_write" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/itemCardCand"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:clickable="true"
+        android:visibility="visible">
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:src="@drawable/photoprofile"
+                    app:civ_border_color="#dfdddd"
+                    app:civ_border_width="1dp" />
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/profile_image"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="32dp"
+                    android:layout_toEndOf="@+id/profile_image"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tx_candName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Ahmed Adjmi"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tx_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/tx_titreOffreList"
+                        android:text="Android Developer"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="10sp" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/agenda" />
+
+                        <TextView
+                            android:id="@+id/tx_dateOffre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:text="25.04.2018"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</com.internship.ahmedaj.tinderstage.View.Adapters.SwipeRevealLayout>
+
+

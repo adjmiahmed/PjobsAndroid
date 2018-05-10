@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys.CandRect">
+
+    <ImageView
+        android:id="@+id/imgcandidate"
+        android:layout_width="150dp"
+        android:layout_height="300dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="115dp"
+        android:layout_marginStart="19dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/cand" />
+
+    <ImageView
+        android:id="@+id/imgrecuteur"
+        android:layout_width="150dp"
+        android:layout_height="300dp"
+        android:layout_alignTop="@+id/imgcandidate"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/imgcandidate"
+        android:scaleType="fitXY"
+        android:src="@drawable/recruter" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="59dp"
+        android:text="Select you account type  please"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
+
+</RelativeLayout>

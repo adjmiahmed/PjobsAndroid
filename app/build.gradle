@@ -9,6 +9,7 @@ android {
     defaultConfig {
         applicationId "com.internship.ahmedaj.tinderstage"
         minSdkVersion 17
+        multiDexEnabled true
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -57,14 +58,23 @@ dependencies {
     implementation 'com.facebook.stetho:stetho:1.5.0'
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
     implementation "com.squareup.retrofit2:converter-gson:2.3.0"
-//live data viewmodel
+    //live data viewmodel
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation "android.arch.lifecycle:livedata:1.1.1"
     annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
-//wave annimation
+    //wave annimation
     compile 'me.alexrs:wave-drawable:1.0.0'
+    //roundedimage
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    //chat
+    compile 'com.github.stfalcon:chatkit:0.2.2'
+    //aaa
+    implementation 'com.shuhart.stepview:stepview:1.2.6'
+    //zzz
+    compile 'com.githang:stepview:0.1'
 
-
+    //multidex
+    compile 'com.android.support:multidex:1.0.1'
 }
 apply plugin: 'com.google.gms.google-services'
 

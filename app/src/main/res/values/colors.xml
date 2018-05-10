@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#02a6ff</color>
-    <color name="colorPrimaryDark">#f2f2f4</color>
+    <color name="colorPrimaryDark">#3ff6f6f9</color>
     <color name="colorAccent">#ffffff</color>
     <color name="colorpanel">#07c2c0c0</color>
+    <color name="colorbttombar">#7f4e4a4a</color>
     <color name="colorbackground">#4f181717</color>
-    <color name="colorList">#6caba7a7</color>
+    <color name="colorBlue">#16237f</color>
+    <color name="colorgreyy">#56f0f0f2</color>
+    <color name="colorList">#5EE514</color>
+    <color name="colorbluebutton">#de14bfe5</color>
+    <color name="backcolor">#3aa5db</color>
+    <color name="yallowinter">#964def</color>
+    <color name="yallowin">#ffaa80</color>
+    <color name="redreject">#ef4d6b</color>
+    <color name="greenaccept">#47d147</color>
+
 </resources>

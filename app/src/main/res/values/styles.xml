@@ -10,4 +10,8 @@
     <style name="BluePrimaryButton" parent="Theme.AppCompat.Light">
         <item name="android:colorBackground">@android:color/black</item>
     </style>
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorBlue</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
 </resources>

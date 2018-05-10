@@ -3,8 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
+    <string name="offer_list">offer list</string>
+    <string name="see_detail">see detail</string>
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
     <string name="desc_google_sign_in">Use a Google Sign In credential to authenticate with Firebase.</string>
     <string name="facebook_app_id">1936579626374375</string>

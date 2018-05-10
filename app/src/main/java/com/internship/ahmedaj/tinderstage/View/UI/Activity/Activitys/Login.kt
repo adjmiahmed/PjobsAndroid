@@ -1,5 +1,7 @@
 package com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -8,8 +10,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v4.content.ContextCompat
 import android.util.Log
-import android.widget.EditText
-import android.widget.Toast
 import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
 import com.facebook.stetho.Stetho
 import com.internship.ahmedaj.tinderstage.Service.Repository.UserApiService
@@ -20,9 +20,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import com.google.android.gms.tasks.Task
 import android.support.annotation.NonNull
+import android.widget.*
 import com.google.android.gms.tasks.OnCompleteListener
-import android.widget.Button
-import android.widget.ImageButton
 import com.facebook.*
 import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
@@ -33,6 +32,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.*
 import com.internship.ahmedaj.tinderstage.R
+import com.internship.ahmedaj.tinderstage.Service.Model.Candidat.Candidate
+import com.internship.ahmedaj.tinderstage.Service.Model.Recruter.Recruter
+import com.internship.ahmedaj.tinderstage.ViewModel.LoginActivityViewModel
+import com.internship.ahmedaj.tinderstage.ViewModel.SplashScreenViewModel
+import kotlin.math.log
 
 class Login : AppCompatActivity() {
 //button et editText
@@ -42,7 +46,15 @@ private lateinit var bt:CircularProgressButton
     private lateinit var tx_passwd:EditText
     private lateinit var bt_googlesignin:ImageButton
     private lateinit var bt_facebooksignin:LoginButton
-    private var conn=true
+    private var conn=false
+    private lateinit var radioGroup:RadioGroup
+
+    //view model login
+    private lateinit var loginviewmodel:LoginActivityViewModel
+private var type:String=""
+    //intent
+   lateinit var intentcandrect:Intent
+
     //object retrofit
     private  var respUser: User = User("", "", "", "", "")
     private val UserApiServe by lazy {
@@ -64,6 +76,13 @@ private val TAGFacebook = "FacebookLogin"
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_login)
+
+//initailaisation du view model
+
+        loginviewmodel= ViewModelProviders.of(this).get(LoginActivityViewModel::class.java)
+
+
+        intentcandrect=Intent(applicationContext, MainActivity::class.java)
         FacebookSdk.sdkInitialize(getApplicationContext())
         FacebookSdk.setApplicationId("1936579626374375")
 
@@ -74,6 +93,39 @@ private val TAGFacebook = "FacebookLogin"
         signup=bt_signup
         bt_googlesignin=bt_googleSignIn
         bt_facebooksignin=bt_facebookSignIn
+        radioGroup=checkRect
+
+
+        //radioGroup checked item
+
+
+
+        radioGroup.setOnCheckedChangeListener(object:RadioGroup.OnCheckedChangeListener{
+            override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
+
+               when (checkedId)
+               {
+                   R.id.radCand->{
+                    conn=true
+                       type="Candidate"
+                    //   intentcandrect.putExtra("accountType","Recruter")
+                     //  intentcandrect.putExtra("accountType","Candidate")
+                       Toast.makeText(applicationContext, "candidate radio button pressed",
+                           Toast.LENGTH_SHORT).show()}
+
+
+               R.id.radRect->{
+                   conn=true
+                   type="Recruter"
+                 //  intentcandrect.putExtra("accountType","Candidate")
+                 //  intentcandrect.putExtra("accountType","Recruter")
+                   Toast.makeText(applicationContext, "recruter radio button pressed",
+                       Toast.LENGTH_SHORT).show()}
+               }
+
+            }
+        })
+
         //firebase auth
         mAuth = FirebaseAuth.getInstance()
         // Configure Google Sign In
@@ -257,23 +309,120 @@ private val TAGFacebook = "FacebookLogin"
         mGoogleSignInClient.revokeAccess().addOnCompleteListener(this
         ) { updateUI(null) }
     }
+/*
     public override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = mAuth.currentUser
         updateUI(currentUser)
     }
-
+*/
      fun updateUI(currentUser: FirebaseUser?) {
         if(currentUser==null){
-            Toast.makeText(this, "No user connected",
+            Toast.makeText(this@Login, "No user connected",
                     Toast.LENGTH_SHORT).show()
             mAuth.signOut()
         }else{
 
             Toast.makeText(this, "current user is :"+currentUser.email,
                     Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, MainActivity::class.java))
+
+            loginviewmodel.getCandByEmail(currentUser.email!!).observe(this@Login,object: Observer<Candidate> {
+                override fun onChanged(t: Candidate?) {
+                    if(t!=null)
+                    {
+                        Handler().postDelayed(object: Runnable {
+                            override fun run() {
+                                Log.d("in get cond not null","email")
+                                intentcandrect.putExtra("accountType","Candidate")
+                                startActivity(intentcandrect)
+                                finish()
+                            }
+
+                        }, 1000);
+
+                       }
+                }
+            })
+            loginviewmodel.getRectByEmail(currentUser.email!!).observe(this@Login, object : Observer<Recruter> {
+                override fun onChanged(t: Recruter?) {
+                    if (t != null) {
+                        Handler().postDelayed(object : Runnable {
+                            override fun run() {
+                                Log.d("in get Rect not null", "email")
+                                intentcandrect.putExtra("accountType", "Recruter")
+                                startActivity(intentcandrect)
+                                finish()
+                            }
+
+                        }, 1000)
+                    }
+
+                }})
+
+
+
+/*
+
+            loginviewmodel.getCandByEmail(currentUser.email!!).observe(this,object: Observer<Candidate> {
+                override fun onChanged(t: Candidate?) {
+                    Log.d(" cond",t.toString())
+                    if(t!=null)
+                    {
+
+                        Handler().postDelayed(object: Runnable {
+                            override fun run() {
+                                Log.d("in get cond not null","email")
+                                intentcandrect.putExtra("accountType","Candidate")
+                                startActivity(intentcandrect)
+                                finish()
+                            }
+
+                        }, 500)
+
+                    }else if(t==null){
+                        loginviewmodel.getRectByEmail(currentUser.email!!).observe(this@Login, object : Observer<Recruter> {
+                            override fun onChanged(t: Recruter?) {
+                                Log.d("in get rect","email")
+                                if(t!=null){
+                                    Handler().postDelayed(object : Runnable {
+                                        override fun run() {
+                                            Log.d("in get Rect not null", "email")
+                                            intentcandrect.putExtra("accountType", "Recruter")
+                                            startActivity(intentcandrect)
+                                            finish()
+                                        }
+
+                                    }, 500)
+                                }else if(t==null)
+                                {
+                                    Log.d("cand null rect null","start login")
+
+                                    if(type.equals("Candidate")){
+                                        intentcandrect.putExtra("accountType","Candidate")
+                                        startActivity(intentcandrect)
+                                    }
+                                    else if(type.equals("Recruter")){
+                                        intentcandrect.putExtra("accountType","Candidate")
+                                        startActivity(intentcandrect)
+                                    }
+                                    else {
+                                        mAuth.signOut()
+                                        Toast.makeText(this@Login, "plz choose your connection type  :", Toast.LENGTH_SHORT).show()
+                                        startActivity(Intent(this@Login, Login::class.java))
+                                    }
+
+
+                                }
+                            }
+
+                        })
+
+                    }
+                    }
+                })
+*/
+
         }
 
     }
@@ -294,7 +443,6 @@ private val TAGFacebook = "FacebookLogin"
 
             override fun onFailure(call: Call<User>?, t: Throwable?)
             {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                 Log.d("","error in onfailure")
                 Toast.makeText(applicationContext,
                         "plz enter a valid username", Toast.LENGTH_SHORT).show();
@@ -331,10 +479,13 @@ private val TAGFacebook = "FacebookLogin"
         }
 
         val changeActivity = {
+         /*   val accounttype = intentcandrect.getStringExtra("accountType")
+            Log.d("accounttype",accounttype)
             if(conn)
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(intentcandrect)
             else
-                startActivity(Intent(this, Login::class.java))
+                startActivity(Intent(this, Login::class.java))*/
+            updateUI(mAuth.currentUser)
             finish()
         }
 

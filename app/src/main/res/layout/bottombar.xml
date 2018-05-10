@@ -2,60 +2,106 @@
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark">
+    android:background="@color/colorAccent">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+
     >
 
 
-    <ImageButton
-        android:id="@+id/bt_accueil"
+    <TextView
+        android:id="@+id/tx_profilee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tx_offers"
+        android:layout_alignBottom="@+id/tx_offers"
+        android:layout_alignEnd="@+id/bt_user"
+        android:text="profile"
+        android:textAlignment="center"
+        android:textColor="@color/colorbackground"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tx_offers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tx_contact"
+        android:layout_alignBottom="@+id/tx_contact"
+        android:layout_alignStart="@+id/bt_offers"
+        android:text="Offers"
+        android:textAlignment="center"
+        android:textColor="@color/colorbackground"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tx_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bt_chat"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="27dp"
+        android:text="Contact"
+        android:textColor="@color/colorbackground"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tx_homee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tx_offers"
+        android:layout_alignBottom="@+id/tx_offers"
+        android:layout_toStartOf="@+id/bt_user"
+        android:text="Home"
+        android:textAlignment="center"
+        android:textColor="@color/colorbackground"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/bt_accueil"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="0dp"
-        android:layout_marginStart="0dp"
-        android:background="@color/colorPrimaryDark"
+
+        android:scaleType="fitXY"
         app:srcCompat="@drawable/acceuil" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/bt_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+               android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="70dp"
         android:layout_marginStart="70dp"
         android:layout_toEndOf="@+id/bt_accueil"
         android:layout_toRightOf="@+id/bt_accueil"
-        android:background="@color/colorPrimaryDark"
+
+        android:scaleType="fitXY"
         app:srcCompat="@drawable/usergrey" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/bt_offers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
         android:layout_toLeftOf="@+id/bt_chat"
         android:layout_toStartOf="@+id/bt_chat"
-        android:background="@color/colorPrimaryDark"
+        android:scaleType="fitXY"
         app:srcCompat="@drawable/casegrey" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/bt_chat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/colorPrimaryDark"
+        android:scaleType="fitXY"
         app:srcCompat="@drawable/ic_action_name" />
 </RelativeLayout>
 </android.support.v7.widget.Toolbar>
