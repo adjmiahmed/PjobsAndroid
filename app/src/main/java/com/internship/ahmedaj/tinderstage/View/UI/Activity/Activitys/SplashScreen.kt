@@ -28,7 +28,7 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
        mAuth = FirebaseAuth.getInstance()
         splashviewmodel= ViewModelProviders.of(this).get(SplashScreenViewModel::class.java)
-        intentcandrect=Intent(applicationContext, MainActivity::class.java)
+        intentcandrect=Intent(applicationContext, NavDrowarAct::class.java)
        updateUI(mAuth.currentUser)
         Handler().postDelayed(object: Runnable {
              override fun run() {
@@ -82,10 +82,8 @@ class SplashScreen : AppCompatActivity() {
                                     startActivity(intentcandrect)
                                 }else
                                 {
-                                    Log.d("cand null rect null","start login")
-                                    mAuth.signOut()
-                                    Toast.makeText(this@SplashScreen, "plz choose your connection type", Toast.LENGTH_SHORT).show()
-                                    startActivity(Intent(this@SplashScreen, Login::class.java))
+                                    Log.d("cand null rect null","start Creating account")
+                                    startActivity(Intent(this@SplashScreen, CreateProfile::class.java))
 
                                 }
                             }

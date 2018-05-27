@@ -1,0 +1,368 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.AddOffre">
+
+    <LinearLayout
+        android:id="@+id/linOfferDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="4dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:id="@+id/ln_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/backkground"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0">
+
+
+                            <ImageView
+                                android:id="@+id/imageView11"
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+
+                                android:layout_alignParentStart="true"
+                                app:srcCompat="@color/colorbackground" />
+
+                            <Button
+                                android:id="@+id/bt_saveoffer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentTop="true"
+                                android:text="Save" />
+
+                            <EditText
+                                android:id="@+id/tx_NameEntp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="-5dp"
+                                android:layout_weight="1"
+                                android:hint="Entreprise Name"
+                                android:text="Proxym-IT"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/tx_jobtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@id/tx_NameEntp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="-15dp"
+                                android:layout_weight="1"
+                                android:hint="Job Title"
+                                android:text="Mobile developper"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="16dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.7"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/bt_saveOffer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/tx_money"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/img_money"
+                                android:layout_marginLeft="50dp"
+                                android:layout_toRightOf="@id/tx_time"
+                                android:layout_weight="1"
+                                android:hint="Salary"
+                                android:text="2000"
+                                android:visibility="visible" />
+
+                            <EditText
+                                android:id="@+id/tx_adress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_below="@+id/img_location"
+                                android:layout_marginRight="50dp"
+
+                                android:layout_toLeftOf="@id/img_time"
+                                android:layout_weight="1"
+                                android:hint="Adress"
+                                android:text="Sousse"
+                                android:visibility="visible" />
+
+                            <EditText
+                                android:id="@+id/tx_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/img_time"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1"
+                                android:hint="Time"
+                                android:text="Full-Time" />
+
+                            <ImageView
+                                android:id="@+id/img_location"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+
+                                android:layout_marginRight="50dp"
+                                android:layout_toLeftOf="@id/img_time"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/location" />
+
+                            <ImageView
+                                android:id="@+id/img_time"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/time" />
+
+                            <ImageView
+                                android:id="@+id/img_money"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="50dp"
+                                android:layout_toRightOf="@id/img_time"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/money" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+
+                            android:layout_weight="1"
+
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+
+                                android:background="@color/colorpanel"
+                                android:paddingLeft="20dp"
+                                android:text="JOB DESCRIPTION"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/tx_description"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_weight="8"
+
+                                android:text="Description" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+
+                            android:layout_weight="1"
+
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+
+                                android:background="@color/colorpanel"
+                                android:paddingLeft="20dp"
+                                android:text="REQUIREMENT"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="30dp"
+                                android:layout_weight="1">
+
+                                <LinearLayout
+                                    android:id="@+id/ln_course"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tx_course"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingBottom="10dp"
+                                        android:text="Course" />
+
+                                    <EditText
+                                        android:id="@+id/tx_courseVal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignStart="@+id/tx_levelOfStudy"
+                                        android:layout_marginLeft="50dp"
+                                        android:hint="study course"
+                                        android:text="Comptuer engineering"
+                                        android:textColor="@android:color/holo_green_light" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ln_skills"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_below="@+id/ln_course">
+                                    <TextView
+                                        android:id="@+id/tx_skills"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_below="@+id/ln_course"
+                                        android:layout_marginTop="0dp"
+                                        android:text="Skills" />
+
+                                    <EditText
+                                    android:id="@+id/tx_SkillsVal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="60dp"
+                                    android:hint="Skill"
+                                    android:text="JAVA"
+                                    android:textColor="@android:color/holo_green_light" />
+                                    <EditText
+                                        android:id="@+id/tx_SkillsVal1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:hint="Skill"
+                                        android:text="Kotlin"
+                                        android:textColor="@android:color/holo_green_light" />
+                                    <EditText
+                                        android:id="@+id/tx_SkillsVal2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:hint="Skill"
+                                        android:text="Scrum"
+                                        android:textColor="@android:color/holo_green_light" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ln_study"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_below="@+id/ln_skills">
+
+                                    <TextView
+                                        android:id="@+id/tx_levelOfStudy"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Level Of Study" />
+
+                                    <EditText
+                                        android:id="@+id/tx_levelOfStudyVal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="30dp"
+                                        android:text="Engineering, Master"
+                                        android:textColor="@android:color/holo_green_light" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ln_language"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_below="@id/ln_study">
+                                    <TextView
+                                        android:id="@+id/tx_Language"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Language" />
+
+                                    <EditText
+                                        android:id="@+id/tx_LanguageVal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="30dp"
+                                        android:text="English"
+                                        android:textColor="@android:color/holo_green_light" />
+                                    <EditText
+                                        android:id="@+id/tx_LanguageVal1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:text="Frensh"
+                                        android:textColor="@android:color/holo_green_light" />
+
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

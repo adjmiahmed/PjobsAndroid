@@ -76,7 +76,6 @@ var skills:String=""
                 langagues+=t.language[i].nom_langue+", "
                 else
                     langagues+=t.language[i].nom_langue+""
-
             }
         }
 

@@ -28,7 +28,7 @@
 
             <ImageButton
                 android:id="@+id/info_button"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:background="@color/yallowin"
                 android:scaleType="fitCenter"
@@ -37,7 +37,7 @@
 
             <ImageButton
                 android:id="@+id/edit_button"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:background="@color/backcolor"
                 android:scaleType="fitCenter"

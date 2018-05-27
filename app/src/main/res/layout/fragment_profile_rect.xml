@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.ProfileFrag">
+    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.ProfileRectFrag">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -20,43 +20,56 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_weight="0.8"
-                android:background="@color/colorgreyy">
+                android:background="@color/colorAccent">
 
-                <TextView
-                    android:id="@+id/tx_username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <RelativeLayout
+                    android:id="@+id/relativeLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@color/profilecolor">
 
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="36dp"
-                    android:layout_toEndOf="@+id/imgediter"
-                    android:text="ADJMI AHMED"
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    <TextView
+                        android:id="@+id/tx_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
+                        android:layout_above="@+id/tx_status"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="111dp"
+                        android:text="ADJMI AHMED"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18dp" />
 
-                <TextView
-                    android:id="@+id/tx_status"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/tx_username"
-                    android:layout_below="@+id/tx_username"
-                    android:text="Mobile Developer"
-                    android:textColor="@color/colorBlue"
-                    android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tx_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignStart="@+id/tx_username"
+                        android:layout_marginBottom="9dp"
+                        android:layout_marginStart="12dp"
+                        android:text="Mobile Developer"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profile_image"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="80dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="47dp"
+                    android:layout_marginEnd="122dp"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
-                    android:layout_centerVertical="true"
                     android:src="@drawable/photoprofile"
                     app:civ_border_color="#acabab"
                     app:civ_border_width="1dp" />
@@ -66,8 +79,8 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_alignEnd="@+id/profile_image"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/editer" />
+                    android:layout_alignTop="@+id/relativeLayout2"
+                    android:src="@drawable/ic_editerback" />
 
 
             </RelativeLayout>
@@ -108,7 +121,7 @@
                             android:layout_alignParentTop="true"
                             android:layout_marginStart="25dp"
                             android:paddingTop="2.5dp"
-                            android:src="@drawable/info" />
+                            android:src="@drawable/ic_info" />
 
                         <TextView
                             android:id="@+id/tx_infomation"
@@ -137,7 +150,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentTop="true"
                                 android:paddingTop="2.5dp"
-                                android:src="@drawable/phonne" />
+                                android:src="@drawable/ic_phone" />
 
                             <TextView
                                 android:id="@+id/tx_Phoneval"
@@ -164,16 +177,6 @@
                             android:layout_below="@+id/img_info"
                             android:layout_marginEnd="33dp">
 
-                            <ImageView
-                                android:id="@+id/img_exmail1"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentTop="true"
-                                android:layout_marginStart="11dp"
-                                android:paddingTop="2.5dp"
-                                android:src="@drawable/email" />
-
                             <TextView
                                 android:id="@+id/tx_emailval"
                                 android:layout_width="wrap_content"
@@ -188,6 +191,15 @@
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
                         </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/img_exmail1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignBottom="@+id/info1"
+                            android:layout_toStartOf="@+id/info1"
+                            android:paddingTop="2.5dp"
+                            android:src="@drawable/ic_mail" />
 
                     </RelativeLayout>
 
@@ -219,7 +231,7 @@
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
                             android:layout_marginStart="28dp"
-                            android:src="@drawable/education" />
+                            android:src="@drawable/ic_education" />
 
                         <TextView
                             android:id="@+id/tx_Education"
@@ -331,6 +343,7 @@
                                 android:textColor="@color/black"
                                 android:textSize="12sp" />
                         </RelativeLayout>
+
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -361,7 +374,7 @@
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
                             android:layout_marginStart="28dp"
-                            android:src="@drawable/experience" />
+                            android:src="@drawable/ic_experience" />
 
                         <TextView
                             android:id="@+id/tx_Experience"
@@ -470,7 +483,7 @@
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
                             android:layout_marginStart="28dp"
-                            android:src="@drawable/education" />
+                            android:src="@drawable/ic_education" />
 
                         <TextView
                             android:id="@+id/tx_Projets"

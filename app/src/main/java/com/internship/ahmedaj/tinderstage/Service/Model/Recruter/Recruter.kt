@@ -14,7 +14,7 @@ var numtel: Int,
 var adress: String,
 var url_img: String,
 var genre: String,
-               var offers:List<RecruterOffer>,
+               var offers:ArrayList<RecruterOffer>,
                var entreprise: RecruterEntreprise) {
     override fun toString(): String {
         return "Recruter(_id='$_id', nom='$nom', email='$email', passwd='$passwd', dateNaissance=$dateNaissance, numtel=$numtel, adress='$adress', url_img='$url_img', genre='$genre', offers=$offers, entreprise=$entreprise)"

@@ -3,8 +3,10 @@ package com.internship.ahmedaj.tinderstage.Service.Repository
 import android.arch.lifecycle.MutableLiveData
 import android.util.Log
 import com.internship.ahmedaj.tinderstage.Service.Model.Candidat.Candidate
+import com.internship.ahmedaj.tinderstage.Service.Model.Candidat.CandidateNoId
 import com.internship.ahmedaj.tinderstage.Service.Model.Candidat.OfferInCand
 import com.internship.ahmedaj.tinderstage.Service.Model.Offer.Offer
+import com.internship.ahmedaj.tinderstage.Service.Model.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -16,6 +18,68 @@ class CandidateRepository {
     companion object {
         var apiservice= APIService.create()
     }
+
+fun createCandidate(cand:CandidateNoId):MutableLiveData<Candidate>
+{
+    var mutableLiveData: MutableLiveData <Candidate> = MutableLiveData()
+
+    apiservice.CreateCandidate(cand).enqueue(object:Callback<Candidate>{
+        override fun onResponse(call: Call<Candidate>?, response: Response<Candidate>?) {
+            Log.d("","onSucess Call")
+            mutableLiveData.value=response!!.body()
+            Log.d("created with sucess",""+ mutableLiveData.value.toString())
+        }
+
+        override fun onFailure(call: Call<Candidate>?, t: Throwable?) {
+            Log.d("failllllle","error"+t)
+        }
+
+
+    })
+
+return mutableLiveData
+}
+    fun updateCand(id:String,cand:CandidateNoId):MutableLiveData<Candidate>
+    {
+        var mutableLiveData: MutableLiveData <Candidate> = MutableLiveData()
+        apiservice.updateCandidate(id,cand).enqueue(object:Callback<Candidate>{
+            override fun onFailure(call: Call<Candidate>?, t: Throwable?) {
+                Log.d("failllllle","error"+t)
+            }
+
+            override fun onResponse(call: Call<Candidate>?, response: Response<Candidate>?) {
+
+                Log.d("","onSucess Call")
+                mutableLiveData.value=response!!.body()
+                Log.d("created with sucess",""+ mutableLiveData.value.toString())
+
+            }
+        })
+
+return mutableLiveData
+    }
+    fun updateCandidate(id:String,cand:CandidateNoId):MutableLiveData<Candidate>
+    {
+        var mutableLiveData: MutableLiveData <Candidate> = MutableLiveData()
+
+        apiservice.updateCandidate(id,cand).enqueue(object:Callback<Candidate>{
+            override fun onResponse(call: Call<Candidate>?, response: Response<Candidate>?) {
+                Log.d("","onSucess Call")
+                mutableLiveData.value=response!!.body()
+                Log.d("created with sucess",""+ mutableLiveData.value.toString())
+            }
+
+            override fun onFailure(call: Call<Candidate>?, t: Throwable?) {
+                Log.d("failllllle","error"+t)
+            }
+
+        })
+
+        return mutableLiveData
+    }
+
+
+
     fun getAllCandidatesLiveData(): MutableLiveData<List<Candidate>> {
         var mutableLiveData: MutableLiveData <List<Candidate>> = MutableLiveData()
         Log.d("hi its all cond retrof","")

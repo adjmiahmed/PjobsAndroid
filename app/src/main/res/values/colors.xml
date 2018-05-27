@@ -11,9 +11,10 @@
     <color name="colorList">#5EE514</color>
     <color name="colorbluebutton">#de14bfe5</color>
     <color name="backcolor">#3aa5db</color>
-    <color name="yallowinter">#964def</color>
+    <color name="yallowinter">#0ef1ad</color>
     <color name="yallowin">#ffaa80</color>
     <color name="redreject">#ef4d6b</color>
     <color name="greenaccept">#47d147</color>
-
+    <color name="profilecolor">#2f799e</color>
+    <color name="colorprofileback">#33B5E5</color>
 </resources>

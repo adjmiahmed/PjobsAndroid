@@ -4,8 +4,10 @@
     package="com.internship.ahmedaj.tinderstage">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
@@ -47,7 +49,30 @@
         <activity android:name=".View.UI.Activity.Activitys.MainActivity" />
         <activity android:name=".View.UI.Activity.Activitys.Login" />
         <activity android:name=".View.UI.Activity.Activitys.Signup" />
-        <activity android:name=".View.UI.Activity.Activitys.CandRect"></activity>
+        <activity android:name=".View.UI.Activity.Activitys.CandRect" />
+        <activity
+            android:name=".View.UI.Activity.Activitys.NavDrowarAct"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".View.UI.Activity.Activitys.CreateProfile" />
+        <activity android:name=".View.UI.Activity.Activitys.CandidateProfileAct" />
+        <activity android:name=".View.UI.Activity.Activitys.RecruterProfileAct"></activity>
+
+        <!-- [START firebase_service] -->
+        <service
+            android:name=".View.UI.Activity.Activitys.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <!-- [END firebase_service] -->
+        <!-- [START firebase_iid_service] -->
+        <service
+            android:name=".View.UI.Activity.Activitys.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <!-- [END firebase_iid_service] -->
     </application>
 
 </manifest>

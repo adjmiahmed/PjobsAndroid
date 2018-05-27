@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys.RecruterProfileAct">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:weightSum="4">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/cardview_light_background">
+
+                    <Button
+                        android:id="@+id/bt_saveprofile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Save" />
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:background="@color/colorprofileback">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:src="@color/colorbackground"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/tx_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/tx_status"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="19dp"
+                        android:layout_marginEnd="101dp"
+                        android:hint="Name Lastname"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <EditText
+                        android:id="@+id/tx_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:hint="Summary"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_above="@+id/tx_status"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="17dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:src="@drawable/photoprofile"
+                        app:civ_border_color="@color/colorprofileback"
+                        app:civ_border_width="3dp" />
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    >
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardinfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignStart="@+id/cardEntreprise">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/info"
+                            android:layout_marginBottom="17dp"
+                            android:layout_marginStart="11dp"
+                            android:layout_marginTop="17dp">
+
+                            <RelativeLayout
+                                android:id="@+id/info1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/Re_info2"
+                                android:layout_marginStart="40dp"
+                                android:layout_toEndOf="@+id/tx_infomation">
+
+                                <ImageView
+                                    android:id="@+id/img_adress1"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerVertical="true"
+                                    android:paddingBottom="5dp"
+                                    android:src="@drawable/ic_location" />
+
+                                <EditText
+                                    android:id="@+id/tx_adressval"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_toEndOf="@+id/img_adress1"
+                                    android:layout_weight="1"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:hint="Adress"
+                                    android:paddingTop="2.5dp"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:id="@+id/img_info"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="25dp"
+                                android:paddingTop="2.5dp"
+                                android:src="@drawable/ic_info_profile" />
+
+                            <TextView
+                                android:id="@+id/tx_infomation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="11dp"
+                                android:layout_toEndOf="@+id/img_info"
+
+
+                                android:text="INFORMATION"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <RelativeLayout
+                                android:id="@+id/Re_info2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@+id/img_info"
+                                android:layout_below="@+id/tx_infomation"
+                                android:layout_marginTop="21dp">
+
+                                <ImageView
+                                    android:id="@+id/tx_imgphone2"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:paddingTop="2.5dp"
+                                    android:src="@drawable/ic_phone_profile" />
+
+                                <EditText
+                                    android:id="@+id/tx_Phoneval"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/tx_imgphone2"
+                                    android:layout_weight="1"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:hint="Phone Number"
+                                    android:paddingTop="2.5dp"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/Re_info3"
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@+id/img_info"
+                                android:layout_below="@+id/Re_info2"
+                                android:layout_marginTop="21dp">
+
+                                <ImageView
+                                    android:id="@+id/tx_imgdateness"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:paddingTop="2.5dp"
+                                    android:src="@drawable/ic_phone_profile" />
+
+                                <EditText
+                                    android:id="@+id/tx_datenaissVal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/tx_imgdateness"
+                                    android:layout_weight="1"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:hint="Date Naissance"
+                                    android:paddingTop="2.5dp"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/Re_info4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@+id/info1"
+                                android:layout_alignTop="@+id/Re_info3">
+
+                                <ImageView
+                                    android:id="@+id/tx_emailimg"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:paddingTop="2.5dp"
+                                    android:src="@drawable/ic_email_profile" />
+
+                                <EditText
+                                    android:id="@+id/tx_email"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/tx_emailimg"
+                                    android:layout_weight="1"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:hint="Email"
+                                    android:paddingTop="2.5dp"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardEntreprise"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/cardinfo"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignStart="@+id/textView13"
+                            android:layout_below="@+id/cardEducation"
+                            android:layout_marginBottom="17dp"
+                            android:layout_marginStart="11dp"
+                            android:layout_marginTop="17dp">
+
+                            <ImageView
+                                android:id="@+id/imageView7"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="28dp"
+                                android:src="@drawable/ic_entreprise" />
+
+                            <TextView
+                                android:id="@+id/tx_Education"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="11dp"
+                                android:layout_toEndOf="@+id/imageView7"
+                                android:text="ENTREPRISE"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/im_Logo"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignTop="@+id/Re_Entreprise_Name"
+                                android:layout_marginEnd="27dp"
+                                android:layout_marginTop="12dp"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp"
+                                android:src="@drawable/logoproxym"
+                                app:civ_border_color="@color/com_facebook_button_login_silver_background_color_pressed"
+                                app:civ_border_width="1dp" />
+
+                            <RelativeLayout
+                                android:id="@+id/Re_Entreprise_Name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignEnd="@+id/Re_Entreprise_Adress"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="28dp"
+                                android:layout_marginTop="20dp">
+
+                                <EditText
+                                    android:id="@+id/tx_EntrepriseName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_weight="1"
+                                    android:hint="Entreprise Name"
+                                    android:text=""
+                                    android:textSize="16sp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/Re_Entreprise_Adress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Re_Entreprise_Name"
+                                android:layout_marginStart="28dp"
+                                android:layout_marginTop="10dp">
+
+                                <ImageView
+                                    android:id="@+id/img_AdressEntreprise"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/ic_location" />
+
+                                <EditText
+                                    android:id="@+id/tx_EntrepriseAdress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_toEndOf="@+id/img_AdressEntreprise"
+                                    android:layout_weight="1"
+                                    android:hint="Entreprise Adress"
+                                    android:text=""
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/Re_Entrepris_Site"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_above="@+id/Re_Entreprise_Email"
+                                android:layout_alignParentEnd="true">
+
+                                <ImageView
+                                    android:id="@+id/img_siteEntreprise"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/ic_location" />
+
+                                <EditText
+                                    android:id="@+id/tx_EntrepriseSite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_toEndOf="@+id/img_siteEntreprise"
+                                    android:layout_weight="1"
+                                    android:hint="Entreprise Adress"
+                                    android:text=""
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/Re_Entreprise_Email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBaseline="@+id/Re_Entreprise_Phone"
+                                android:layout_alignBottom="@+id/Re_Entreprise_Phone"
+                                android:layout_alignStart="@+id/Re_Entrepris_Site">
+
+                                <ImageView
+                                    android:id="@+id/img_EmailEntreprise"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/ic_email_profile" />
+
+                                <EditText
+                                    android:id="@+id/tx_EntrepriseEmail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_toEndOf="@+id/img_EmailEntreprise"
+                                    android:layout_weight="1"
+                                    android:hint="Entreprise Email"
+                                    android:text=""
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/Re_Entreprise_Phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Re_Entreprise_Adress"
+                                android:layout_marginTop="10dp">
+
+                                <ImageView
+                                    android:id="@+id/img_PhoneEntreprise"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="28dp"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/ic_phone_profile" />
+
+                                <EditText
+                                    android:id="@+id/tx_EntreprisePhone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_toEndOf="@+id/img_PhoneEntreprise"
+                                    android:layout_weight="1"
+                                    android:hint="Entreprise Number"
+                                    android:text=""
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+
+</RelativeLayout>

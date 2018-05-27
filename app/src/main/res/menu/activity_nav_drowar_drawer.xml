@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_allCand"
+            android:icon="@drawable/ic_allcand"
+            android:title="All Candidates" />
+        <item
+            android:id="@+id/nav_addOffre"
+            android:icon="@drawable/ic_addoffre"
+            android:title="Add Offer" />
+        <item
+            android:id="@+id/nav_editProfile"
+            android:icon="@drawable/ic_edit"
+            android:title="Edit Profile" />
+
+            <item android:id="@+id/nav_calender"
+            android:icon="@drawable/ic_cander"
+            android:title="Calendar" />
+
+
+</group>
+    <item android:title="About App">
+        <menu>
+            <item
+                android:id="@+id/nav_desc"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Description" />
+            <item
+                android:id="@+id/nav_copyrigth"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Copyrigth" />
+        </menu>
+    </item>
+
+</menu>

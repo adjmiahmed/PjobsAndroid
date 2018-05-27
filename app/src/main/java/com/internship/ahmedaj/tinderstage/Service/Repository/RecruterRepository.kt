@@ -5,6 +5,7 @@ import android.util.Log
 import com.internship.ahmedaj.tinderstage.Service.Model.Candidat.Candidate
 import com.internship.ahmedaj.tinderstage.Service.Model.Offer.Offer
 import com.internship.ahmedaj.tinderstage.Service.Model.Recruter.Recruter
+import com.internship.ahmedaj.tinderstage.Service.Model.Recruter.RecruterNoId
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,6 +20,68 @@ class RecruterRepository {
     }
 
 
+    fun createRecruter(rect:RecruterNoId): MutableLiveData<Recruter> {
+        var mutableLiveData: MutableLiveData<Recruter> = MutableLiveData()
+
+        apiservice.CreateRecruter(rect).enqueue(object :Callback<Recruter>{
+        override fun onResponse(call: Call<Recruter>?, response: Response<Recruter>?) {
+
+        mutableLiveData.value=response!!.body()
+        Log.d("created with sucess",mutableLiveData.value.toString())
+
+        }
+
+        override fun onFailure(call: Call<Recruter>?, t: Throwable?) {
+
+        Log.d("failer on offer list",t!!.message)
+
+        }
+
+    })
+
+return mutableLiveData
+    }
+
+    fun updateRecruter(id:String,rect:RecruterNoId): MutableLiveData<Recruter> {
+        var mutableLiveData: MutableLiveData<Recruter> = MutableLiveData()
+
+        apiservice.updateRecruter(id,rect).enqueue(object :Callback<Recruter>{
+            override fun onResponse(call: Call<Recruter>?, response: Response<Recruter>?) {
+
+                mutableLiveData.value=response!!.body()
+                Log.d("created with sucess",mutableLiveData.value.toString())
+
+            }
+
+            override fun onFailure(call: Call<Recruter>?, t: Throwable?) {
+
+                Log.d("failer on offer list",t!!.message)
+
+            }
+
+        })
+
+        return mutableLiveData
+    }
+
+fun getRectById(id:String):MutableLiveData<Recruter>{
+    var mutableLiveData: MutableLiveData<Recruter> = MutableLiveData()
+
+    apiservice.getRecruterById(id).enqueue(object:Callback<Recruter>{
+        override fun onFailure(call: Call<Recruter>?, t: Throwable?) {
+            Log.d("failer ",t!!.message)
+        }
+
+        override fun onResponse(call: Call<Recruter>?, response: Response<Recruter>?) {
+            mutableLiveData.value=response!!.body()
+            Log.d(" sucess",mutableLiveData.value.toString())
+        }
+
+    })
+
+
+return mutableLiveData
+}
     fun getAllRecrutersLiveData(): MutableLiveData<List<Recruter>> {
         var mutableLiveData: MutableLiveData<List<Recruter>> = MutableLiveData()
         Log.d("hi its all cond retrof","")

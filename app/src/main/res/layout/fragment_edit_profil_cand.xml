@@ -1,0 +1,700 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.editProfil">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_light_background">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:background="#33B5E5">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@color/colorbackground"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/tx_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignBottom="@+id/tx_status"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="19dp"
+                    android:layout_marginEnd="101dp"
+                    android:hint="Name Lastname"
+                    android:text="ADJMI AHMED"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/tx_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/profile_image"
+                    android:layout_marginBottom="5dp"
+                    android:hint="status"
+                    android:text="Mobile Developer"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_above="@+id/tx_status"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="17dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:src="@drawable/photoprofile"
+                    app:civ_border_color="@color/colorprofileback"
+                    app:civ_border_width="3dp" />
+
+                <ImageView
+                    android:id="@+id/imgediter"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignEnd="@+id/profile_image"
+                    android:layout_alignTop="@+id/relativeLayout"
+                    android:src="@drawable/editer" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                >
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_below="@+id/info"
+                        android:layout_marginBottom="17dp"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="17dp">
+
+                        <ImageView
+                            android:id="@+id/img_info"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="25dp"
+                            android:paddingTop="2.5dp"
+                            android:src="@drawable/ic_info_profile" />
+
+                        <TextView
+                            android:id="@+id/tx_infomation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="11dp"
+                            android:layout_toEndOf="@+id/img_info"
+
+
+                            android:text="INFORMATION"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:id="@+id/Re_info2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="21dp"
+                            android:layout_alignStart="@+id/img_info"
+                            android:layout_below="@+id/tx_infomation">
+
+                            <ImageView
+                                android:id="@+id/tx_imgphone2"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:paddingTop="2.5dp"
+                                android:src="@drawable/ic_phone_profile" />
+
+                            <EditText
+                                android:id="@+id/tx_Phoneval"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_toEndOf="@+id/tx_imgphone2"
+                                android:layout_weight="1"
+                                android:fontFamily="sans-serif-condensed"
+                                android:paddingTop="2.5dp"
+                                android:hint="Phone Number"
+                                android:text="50596473"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/info1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@+id/img_info"
+                            android:layout_marginTop="21dp">
+
+                            <ImageView
+                                android:id="@+id/img_exmail1"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:paddingBottom="5dp"
+                                android:src="@drawable/ic_email_profile" />
+
+                            <EditText
+                                android:id="@+id/tx_emailval"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="5dp"
+                                android:paddingTop="2.5dp"
+                                android:layout_toEndOf="@+id/img_exmail1"
+                                android:layout_weight="1"
+
+                                android:fontFamily="sans-serif-condensed"
+                                android:hint="Email"
+                                android:text="ahmedelajmi1@gmail.com"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardEducation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/cardinfo"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignStart="@+id/textView13"
+                        android:layout_below="@+id/cardEducation"
+                        android:layout_marginBottom="17dp"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="17dp">
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="28dp"
+                            android:src="@drawable/ic_education_profile" />
+
+                        <TextView
+                            android:id="@+id/tx_Education"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="11dp"
+                            android:layout_toEndOf="@+id/imageView7"
+                            android:text="EDUCATION"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:id="@+id/Re_education2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/Re_education1"
+                            android:layout_marginTop="21dp">
+
+                            <EditText
+                                android:id="@+id/tx_date2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="29dp"
+                                android:layout_weight="1"
+                                android:hint="Date"
+                                android:text="2017-2018"
+                                android:textSize="10sp" />
+
+                            <EditText
+                                android:id="@+id/tx_education2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1"
+                                android:fontFamily="sans-serif-condensed"
+                                android:hint="Education"
+                                android:text="IssatSo"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/Re_education3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/Re_education2"
+                            android:layout_marginTop="21dp">
+
+                            <EditText
+                                android:id="@+id/tx_date3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="29dp"
+                                android:layout_weight="1"
+                                android:hint="Date"
+                                android:text="2017-2018"
+
+                                android:textSize="10sp" />
+
+                            <EditText
+                                android:id="@+id/tx_education3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1"
+                                android:fontFamily="sans-serif-condensed"
+                                android:hint="Education"
+                                android:text="IssatSo"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardEducation"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignStart="@+id/textView13"
+                        android:layout_below="@+id/cardEducation"
+                        android:layout_marginBottom="17dp"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="17dp">
+
+                        <ImageView
+                            android:id="@+id/Experienceimg"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="28dp"
+                            android:src="@drawable/ic_exp_profile" />
+
+                        <TextView
+                            android:id="@+id/tx_Experience"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="11dp"
+                            android:layout_toEndOf="@+id/Experienceimg"
+                            android:text="EXPERIENCE"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:id="@+id/Re_Experience1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/tx_Experience"
+                            android:layout_marginTop="21dp">
+
+                            <EditText
+                                android:id="@+id/tx_Edate1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="29dp"
+                                android:layout_weight="1"
+                                android:hint="Date"
+                                android:text="2017-2018"
+                                android:textSize="10sp" />
+
+                            <EditText
+                                android:id="@+id/tx_Eexperience1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1"
+                                android:fontFamily="sans-serif-condensed"
+                                android:hint="Experience"
+                                android:text="Issatso"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/Re_Experience2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/Re_Experience1"
+                            android:layout_marginTop="21dp">
+
+                            <EditText
+                                android:id="@+id/tx_Edate2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="29dp"
+                                android:layout_weight="1"
+                                android:hint="Date"
+                                android:paddingTop="2.5dp"
+                                android:text="2017-2018"
+                                android:textSize="10sp" />
+
+                            <EditText
+                                android:id="@+id/tx_Eexperience2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1"
+                                android:fontFamily="sans-serif-condensed"
+                                android:hint="Experience"
+                                android:text="Issat Sousse"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardProjects"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardExperience"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignStart="@+id/textView13"
+                        android:layout_below="@+id/cardExperience"
+                        android:layout_marginBottom="17dp"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="17dp">
+
+                        <ImageView
+                            android:id="@+id/projetimg"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="28dp"
+                            android:src="@drawable/education" />
+
+                        <TextView
+                            android:id="@+id/tx_Projets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="11dp"
+                            android:layout_toEndOf="@+id/projetimg"
+                            android:text="PROJECTS"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:id="@+id/Re_Project1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/tx_Projets"
+                            android:layout_marginTop="21dp">
+
+                            <EditText
+                                android:id="@+id/tx_Pdate1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="29dp"
+                                android:layout_weight="1"
+                                android:hint="Date"
+                                android:paddingTop="2.5dp"
+                                android:text="2017-2018"
+                                android:textSize="10sp" />
+
+                            <EditText
+                                android:id="@+id/tx_Pproject1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1"
+                                android:fontFamily="sans-serif-condensed"
+                                android:hint="Project"
+                                android:text="Issatso"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/Re_project2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/Re_Project1"
+                            android:layout_marginTop="21dp">
+
+                            <EditText
+                                android:id="@+id/tx_Pdate2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="29dp"
+                                android:layout_weight="1"
+                                android:hint="Date"
+                                android:paddingTop="2.5dp"
+                                android:text="2017-2018"
+                                android:textSize="10sp" />
+
+                            <EditText
+                                android:id="@+id/tx_Pproject2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1"
+                                android:fontFamily="sans-serif-condensed"
+                                android:hint="Project"
+                                android:text="Issatso"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardSkills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardProjects"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignStart="@+id/textView13"
+                        android:layout_below="@+id/cardProjects"
+                        android:layout_marginBottom="17dp"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="17dp">
+
+                        <ImageView
+                            android:id="@+id/skillsimglogo"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="28dp"
+                            android:src="@drawable/ic_skills" />
+
+                        <TextView
+                            android:id="@+id/tx_skillstitre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="11dp"
+                            android:layout_toEndOf="@+id/skillsimglogo"
+                            android:text="SKILLS"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:id="@+id/Re_skillsprof1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/tx_skillstitre"
+                            android:layout_marginTop="21dp">
+
+                            <EditText
+                                android:id="@+id/tx_skilname"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="29dp"
+                                android:layout_weight="1"
+                                android:hint="Skill Name"
+                                android:paddingTop="2.5dp"
+                                android:text="JAVA"
+                                android:textSize="10sp" />
+
+                            <Spinner
+                                android:id="@+id/sp_education2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="100dp"
+                                android:layout_toEndOf="@+id/tx_skilname"
+                                android:layout_weight="1"
+                                android:minWidth="85dp"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/Re_skillsprof2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/Re_skillsprof1"
+                            android:layout_marginTop="21dp">
+
+                            <EditText
+                                android:id="@+id/tx_skilname2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="29dp"
+                                android:layout_weight="1"
+                                android:hint="Skill Name"
+                                android:paddingTop="2.5dp"
+                                android:text="JAVA"
+                                android:textSize="10sp" />
+
+                            <Spinner
+                                android:id="@+id/sp_education3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="100dp"
+                                android:layout_toEndOf="@+id/tx_skilname2"
+                                android:layout_weight="1"
+                                android:minWidth="85dp"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/Re_skillsprof3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/Re_skillsprof2"
+                            android:layout_marginTop="21dp">
+
+                            <EditText
+                                android:id="@+id/tx_skilname3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="29dp"
+                                android:layout_weight="1"
+                                android:hint="Skill Name"
+                                android:paddingTop="2.5dp"
+                                android:text="JAVA"
+                                android:textSize="10sp" />
+
+                            <Spinner
+                                android:id="@+id/sp_education4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="100dp"
+                                android:layout_toEndOf="@+id/tx_skilname3"
+                                android:layout_weight="1"
+                                android:minWidth="85dp"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
