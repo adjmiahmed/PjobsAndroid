@@ -63,18 +63,10 @@ for(i in 0..t.size-1)
         val adapterCandidateProfile= RecruterCandidateRecycleAdapter(listCand,view.context,view)
         recyCandidateProfile.adapter=adapterCandidateProfile
     }
-
-
 }
         }
     }
-
-
 })
-
-
-
-
         return view
     }
 

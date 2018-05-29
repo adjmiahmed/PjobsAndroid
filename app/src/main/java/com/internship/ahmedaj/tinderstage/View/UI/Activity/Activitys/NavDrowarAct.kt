@@ -2,7 +2,9 @@ package com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys
 
 import android.arch.lifecycle.Observer
 import android.content.ClipData
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -22,9 +24,16 @@ import com.facebook.stetho.Stetho
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.GetTokenResult
 import com.google.firebase.iid.FirebaseInstanceId
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.internship.ahmedaj.tinderstage.R
+import com.internship.ahmedaj.tinderstage.Service.Model.Candidat.CandItemAcceptedList
 import com.internship.ahmedaj.tinderstage.Service.Repository.NotificationRepository
 import com.internship.ahmedaj.tinderstage.View.UI.Activity.Fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -33,6 +42,7 @@ import kotlinx.android.synthetic.main.app_bar_nav_drowar.*
 import kotlinx.android.synthetic.main.bottombar.*
 import kotlinx.android.synthetic.main.toolbar.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.reflect.Type
 import javax.security.auth.callback.Callback
 
 class NavDrowarAct : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -71,17 +81,37 @@ class NavDrowarAct : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var allOffreFrag:AllOffreFrag
     var x: Int = 0
     var accType:Int=0
+        var account:String=""
+    var gson= Gson()
+    lateinit var sharedPrefAcc: SharedPreferences
+    lateinit var sharedPreffrag: SharedPreferences
 
-lateinit var menu:Menu
+    lateinit var menu:Menu
     lateinit var allcand:MenuItem
     lateinit var addoffre:MenuItem
     lateinit var editprofil:MenuItem
     lateinit var calander:MenuItem
-
+    var accounttype:String=""
+    var fragtype:String=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nav_drowar)
        setSupportActionBar(toolbar)
+        sharedPrefAcc =getSharedPreferences("Account", Context.MODE_PRIVATE)
+        sharedPreffrag =getSharedPreferences("frag", Context.MODE_PRIVATE)
+
+        var mUser : FirebaseUser = FirebaseAuth.getInstance().currentUser!!
+        mUser.getIdToken(true)
+                .addOnCompleteListener(object: OnCompleteListener<GetTokenResult> {
+                    override fun onComplete(task: Task<GetTokenResult>) {
+                        if (task.isSuccessful()) {
+                            var idToken:String = task.getResult().token!!
+                            Log.d("Token",idToken)
+                        } else {
+                            // Handle error -> task.getException();
+                        }
+                    }
+                })
 Log.d("Token is:",FirebaseInstanceId.getInstance().token)
      /*   var not=FirebaseInstanceId.getInstance().token
         if(not!=null)
@@ -136,9 +166,17 @@ Log.d("Token is:",FirebaseInstanceId.getInstance().token)
         }
 */
         // getting condidate intent from login
+    //    getFragSharedPref()
 
-        val intent = getIntent();
-        val accounttype = intent.getStringExtra("accountType")
+        if(getIntent().getStringExtra("nextfrag")!=null) {
+            Log.d("babab", getIntent().getStringExtra("nextfrag"))
+            if (getIntent().getStringExtra("nextfrag").equals("offersFrag")) {
+                x = 1
+            } else if (getIntent().getStringExtra("nextfrag").equals("ContactCand")) {
+                x = 3
+            }
+        }
+      getListFromSharedPref()
         if (accounttype != null) {
 
             if (accounttype.equals("Candidate")) {
@@ -493,4 +531,18 @@ Log.d("Token is:",FirebaseInstanceId.getInstance().token)
         }
         return fragmentManager
     }
+
+
+    fun getListFromSharedPref(){
+        val json=sharedPrefAcc.getString("accountType",null)
+        val type: Type =object: TypeToken<String>(){}.type
+        accounttype=gson.fromJson(json,type)
+    }
+
+    fun getFragSharedPref(){
+        val json=sharedPreffrag.getString("frag",null)
+        val type: Type =object: TypeToken<String>(){}.type
+        fragtype=gson.fromJson(json,type)
+    }
+
 }

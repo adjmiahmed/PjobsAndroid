@@ -47,6 +47,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".View.UI.Activity.Activitys.MainActivity" />
+
         <activity android:name=".View.UI.Activity.Activitys.Login" />
         <activity android:name=".View.UI.Activity.Activitys.Signup" />
         <activity android:name=".View.UI.Activity.Activitys.CandRect" />
@@ -59,7 +60,7 @@
 
         <!-- [START firebase_service] -->
         <service
-            android:name=".View.UI.Activity.Activitys.MyFirebaseMessagingService">
+            android:name=".Service.fireBaseService.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
@@ -67,7 +68,7 @@
         <!-- [END firebase_service] -->
         <!-- [START firebase_iid_service] -->
         <service
-            android:name=".View.UI.Activity.Activitys.MyFirebaseInstanceIDService">
+            android:name=".Service.fireBaseService.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>

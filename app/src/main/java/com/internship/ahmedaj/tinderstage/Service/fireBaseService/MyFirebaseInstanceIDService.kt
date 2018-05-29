@@ -1,4 +1,4 @@
-package com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys
+package com.internship.ahmedaj.tinderstage.Service.fireBaseService
 
 import android.util.Log
 import com.google.firebase.iid.FirebaseInstanceIdService

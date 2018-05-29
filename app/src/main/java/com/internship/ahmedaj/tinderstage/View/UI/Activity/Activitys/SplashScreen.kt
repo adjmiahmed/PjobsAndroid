@@ -2,7 +2,9 @@ package com.internship.ahmedaj.tinderstage.View.UI.Activity.Activitys
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -10,17 +12,23 @@ import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.internship.ahmedaj.tinderstage.R
+import com.internship.ahmedaj.tinderstage.Service.Model.Candidat.CandItemAcceptedList
 import com.internship.ahmedaj.tinderstage.Service.Model.Candidat.Candidate
 import com.internship.ahmedaj.tinderstage.Service.Model.Recruter.Recruter
 import com.internship.ahmedaj.tinderstage.ViewModel.LoginActivityViewModel
 import com.internship.ahmedaj.tinderstage.ViewModel.SplashScreenViewModel
+import java.lang.reflect.Type
 
 class SplashScreen : AppCompatActivity() {
     private lateinit  var mAuth: FirebaseAuth
     //view model login
     private lateinit var splashviewmodel:SplashScreenViewModel
-
+    var account:String=""
+    lateinit var sharedPrefAcc: SharedPreferences
+    var gson= Gson()
     //intent
     lateinit var intentcandrect:Intent
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,27 +37,16 @@ class SplashScreen : AppCompatActivity() {
        mAuth = FirebaseAuth.getInstance()
         splashviewmodel= ViewModelProviders.of(this).get(SplashScreenViewModel::class.java)
         intentcandrect=Intent(applicationContext, NavDrowarAct::class.java)
-       updateUI(mAuth.currentUser)
-        Handler().postDelayed(object: Runnable {
-             override fun run() {
-         //      val i:Intent =  Intent(applicationContext, Login::class.java)
-           //    startActivity(i)
-                 // close this activity
-         // updateUI(mAuth.currentUser)
-                 finish()
-             }
 
-        }, 2000);
-    }
+        sharedPrefAcc = getSharedPreferences("Account", Context.MODE_PRIVATE)
+
+        updateUI(mAuth.currentUser)
+        }
     fun updateUI(currentUser: FirebaseUser?) {
         if(currentUser==null){
 
             Handler().postDelayed(object: Runnable {
                 override fun run() {
-                    //      val i:Intent =  Intent(applicationContext, Login::class.java)
-                    //    startActivity(i)
-                    // close this activity
-                    // updateUI(mAuth.currentUser)
                     Toast.makeText(this@SplashScreen, "No user connected",
                             Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this@SplashScreen,Login::class.java))
@@ -67,9 +64,10 @@ class SplashScreen : AppCompatActivity() {
                 override fun onChanged(t: Candidate?) {
                     Log.d("in get cond","email")
                     if(t!=null)
-                    {
+                    {account="Candidate"
                         Log.d("in get cond not null","email")
-                        intentcandrect.putExtra("accountType","Candidate")
+                       // intentcandrect.putExtra("accountType","Candidate")
+                        saveListInSharedPref()
                         startActivity(intentcandrect)
 
                     }else {
@@ -77,12 +75,15 @@ class SplashScreen : AppCompatActivity() {
                             override fun onChanged(t: Recruter?) {
                                 Log.d("in get rect","email")
                                 if(t!=null){
+                                    account="Recruter"
                                     Log.d("in get rect not null","email")
-                                    intentcandrect.putExtra("accountType","Recruter")
+                                    //intentcandrect.putExtra("accountType","Recruter")
+                                    saveListInSharedPref()
                                     startActivity(intentcandrect)
                                 }else
                                 {
                                     Log.d("cand null rect null","start Creating account")
+                                    saveListInSharedPref()
                                     startActivity(Intent(this@SplashScreen, CreateProfile::class.java))
 
                                 }
@@ -98,6 +99,13 @@ class SplashScreen : AppCompatActivity() {
 
     }
 
+
+    fun saveListInSharedPref(){
+        val edit=sharedPrefAcc.edit()
+        val json= gson.toJson( account)
+        edit.putString("accountType",json)
+        edit.apply()
+    }
 
 }
 
